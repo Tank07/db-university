@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GroupBy and Join</title>
+</head>
+<body>
+    
+   <h2>GROUP BY:</h2> 
+
+ <p> 1) SELECT COUNT(id), YEAR(`enrolment_date`) <br>
+    FROM `students` <br>
+    GROUP BY YEAR(`enrolment_date`)</p> 
+
+ <p> 2) SELECT COUNT(id), office_address  <br>
+    FROM `teachers` <br>
+    GROUP BY office_address; </p>
+
+<p>3) SELECT AVG(`vote`) <br>
+FROM `exam_student`;</p> 
+
+<p> 4) SELECT COUNT(name), department_id <br>
+    FROM `degrees` <br>
+    GROUP BY department_id</p>
+
+<h2>JOIN:</h2> 
+
+<p>1) SELECT * 
+    FROM `students`  <br>
+    JOIN `degrees` ON `students`. `degree_id` = `degrees`. `id` <br>
+    WHERE `degrees`. `name` = "Corso di Laurea in Economia"</p> 
+
+<p></p> 2) 
+
+<p></p> 3)
+
+<p></p> 4)
+
+<p></p> 5)
+
+<p></p> 6)
+
+<p></p> 7)
+
+</body>
+</html>
