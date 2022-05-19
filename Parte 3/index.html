@@ -8,7 +8,7 @@
 </head>
 <body>
     
-   <h2>GROUP BY:</h2> 
+ <h2>GROUP BY:</h2> 
 
  <p> 1) SELECT COUNT(id), YEAR(`enrolment_date`) <br>
     FROM `students` <br>
@@ -25,20 +25,35 @@ FROM `exam_student`;</p>
     FROM `degrees` <br>
     GROUP BY department_id</p>
 
-<h2>JOIN:</h2> 
+<h2> JOIN: </h2> 
 
-<p>1) SELECT * 
+<p> 1) SELECT * 
     FROM `students`  <br>
     JOIN `degrees` ON `students`. `degree_id` = `degrees`. `id` <br>
     WHERE `degrees`. `name` = "Corso di Laurea in Economia"</p> 
 
-<p></p> 2) 
+<p> 2) SELECT * 
+FROM `departments` <br>
+JOIN `degrees` ON `departments`.`id` = `departments`.`id` <br>
+WHERE `departments`.`name` = "Dipartimento di Neuroscienze" AND `degrees`.`level` = "Magistrale";</p> 
 
-<p></p> 3)
+<p> 3) SELECT * 
+FROM `courses` <br>
+JOIN `course_teacher` ON `courses`.`id` = `course_teacher`.`course_id` <br>
+JOIN `teachers` ON `course_teacher`.`teacher_id` = `teachers`.`id` <br>
+WHERE `teachers`.`name` = "Fulvio" AND `teachers`.`surname` = "Amato";</p> 
 
-<p></p> 4)
+<p> 4) SELECT * 
+    FROM `students` <br>
+    JOIN `degrees` ON `students`.`degree_id` = `degrees`.`id` <br>
+    JOIN `departments` ON `degrees`.`department_id`=`departments`.`id` <br>
+    ORDER BY `students`.`name` ASC, `students`.`surname` ASC;</p>
 
-<p></p> 5)
+<p> 5) SELECT *
+    FROM `degrees`  <br>
+    JOIN `courses` ON `courses`.`degree_id` = `degrees`.`id` <br>
+    JOIN `course_teacher` ON `course_teacher`.`course_id`=`courses`.`id` <br>
+    JOIN `teachers` ON `teachers`.`id`=`course_teacher`.`teacher_id`;</p> 
 
 <p></p> 6)
 
